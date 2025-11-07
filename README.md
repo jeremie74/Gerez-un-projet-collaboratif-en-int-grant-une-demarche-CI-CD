@@ -55,3 +55,23 @@ Build the container:
 Start the container:
 
 > docker run -p 8080:8080 --name bobapp-back -d bobapp-back 
+
+## CI/CD pipeline
+
+The repository ships with a GitHub Actions workflow (`.github/workflows/ci-cd.yml`) that:
+
+- runs Maven and Angular unit tests with coverage (JaCoCo + lcov);
+- triggers a SonarQube/SonarCloud scan and enforces the quality gate;
+- builds and pushes Docker images (front/back) to Docker Hub on pushes to `main`.
+
+### Required secrets
+
+Configure these repository secrets before running the workflow:
+
+- `SONAR_HOST_URL` – URL of your SonarQube/SonarCloud instance (for SonarCloud use `https://sonarcloud.io`);
+- `SONAR_TOKEN` – analysis token generated from Sonar;
+- `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` – Docker Hub credentials with push rights.
+
+Update `sonar-project.properties` with your own `sonar.projectKey` and `sonar.organization`.
+
+Additional documentation: `docs/ci-cd-report.md`.
