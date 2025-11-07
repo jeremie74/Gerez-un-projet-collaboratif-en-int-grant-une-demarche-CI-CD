@@ -4,13 +4,13 @@ Clone project:
 
 > git clone XXXXX
 
-## Front-end 
+## Front-end
 
 Go inside folder the front folder:
 
 > cd front
 
-Install dependencies:
+Install dependency:
 
 > npm install
 
@@ -22,7 +22,7 @@ Launch Front-end:
 
 Build the container:
 
-> docker build -t bobapp-front .  
+> docker build -t bobapp-front .
 
 Start the container:
 
@@ -40,7 +40,7 @@ Install dependencies:
 
 Launch Back-end:
 
->  mvn spring-boot:run
+> mvn spring-boot:run
 
 Launch the tests:
 
@@ -50,11 +50,11 @@ Launch the tests:
 
 Build the container:
 
-> docker build -t bobapp-back .  
+> docker build -t bobapp-back .
 
 Start the container:
 
-> docker run -p 8080:8080 --name bobapp-back -d bobapp-back 
+> docker run -p 8080:8080 --name bobapp-back -d bobapp-back
 
 ## CI/CD pipeline
 
