@@ -1,4 +1,4 @@
-# BobApp
+# BobApp.
 
 Clone project:
 
